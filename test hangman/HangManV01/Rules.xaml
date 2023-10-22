@@ -1,0 +1,41 @@
+﻿<Window x:Class="HangManV01.Rules"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HangManV01"
+        mc:Ignorable="d"
+        Title="Rules" Height="550" Width="830" Icon="Images/icon.ico">
+    <Grid Background="#333333">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Margin="30" Foreground="White" Background="#333333" FontSize="16">
+                <Run FontWeight="Bold" FontSize="18" Text="Objective:"/><LineBreak/>
+                The player aims to guess a word or phrase before the hangman figure is fully drawn.
+
+                <LineBreak/><LineBreak/>
+                <Run FontWeight="Bold" FontSize="18" Text="Setup:"/><LineBreak/>
+                A computer program randomly selects a word or phrase or gets one from another player, and displays blanks for each letter. For example, for the word "COMPUTER", it would display: _ _ _ _ _ _ _ _.
+
+                <LineBreak/><LineBreak/>
+                <Run FontWeight="Bold" FontSize="18" Text="How to Play:"/><LineBreak/>
+                <Run Text="1. Guessing Letters: "/> The player guesses a letter of the word. If the letter is in the word, the program fills it in the appropriate blank(s).<LineBreak/>
+                <Run Text="2. Incorrect Guesses: "/> For every incorrect letter guessed, a part of the hangman figure is drawn.<LineBreak/>
+                <Run FontWeight="Bold" Text="3. Winning or Losing:"/><LineBreak/>
+                - Winning: The player wins by guessing all the letters in the word before the hangman is fully drawn.<LineBreak/>
+                - Losing: The player loses if the hangman is fully drawn before all the letters in the word are guessed.
+
+                <LineBreak/><LineBreak/>
+                <Run FontWeight="Bold" FontSize="18" Text="Computer Features:"/><LineBreak/>
+                
+                
+                - A visual representation of the hangman structure gets updated with every wrong guess.
+
+                <LineBreak/><LineBreak/>
+                <Run FontWeight="Bold" FontSize="18" Text="Tips:"/><LineBreak/>
+                - Use hint to make the game more easy.<LineBreak/>
+                - The difficulty level can be adjusted by the length of the word.
+            </TextBlock>
+        </ScrollViewer>
+        <Button  Content="Zpět" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,469,60,0" Width="100" Height="30" Background="#FF0000" Foreground="#FFFFFF" FontSize="16" Click="BackButton_Click"/>
+    </Grid>
+</Window>

@@ -1,0 +1,31 @@
+﻿<Window x:Class="HangManV01.Options"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HangManV01"
+        mc:Ignorable="d"
+        Title="Options" Height="545" Width="400" Background="#1E1E1E" Icon="Images/icon.ico">
+
+    <Grid Margin="20">
+
+        <Label Content="List of words" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Foreground="#D0D0D0" FontSize="18" FontWeight="Bold"/>
+
+        <TextBox x:Name="Word" GotFocus="Word_GotFocus" HorizontalAlignment="Left" Margin="10,70,0,0" TextWrapping="Wrap" Text="Word" VerticalAlignment="Top" Height="30" Width="150" Background="#2A2A2A" Foreground="#D0D0D0" BorderBrush="#424242" Padding="5"/>
+
+        <TextBox x:Name="Hint" GotFocus="Hint_GotFocus" HorizontalAlignment="Right" Margin="0,70,10,0" TextWrapping="Wrap" Text="Hint" VerticalAlignment="Top" Height="30" Width="150" Background="#2A2A2A" Foreground="#D0D0D0" BorderBrush="#424242" Padding="5"/>
+
+        <Button Content="ADD" Click="AddButton_Click" HorizontalAlignment="Right" Margin="0,110,10,0" VerticalAlignment="Top" Width="120" Height="40" Background="#3C8D2F" Foreground="White" BorderBrush="#333333"/>
+
+        <TextBox x:Name="Delete" GotFocus="Delete_GotFocus" HorizontalAlignment="Center" Margin="0,180,0,0" TextWrapping="Wrap" Text="Delete word" VerticalAlignment="Top" Width="280" Background="#2A2A2A" Foreground="#D0D0D0" BorderBrush="#424242" Padding="5" />
+
+        <Button Content="delete" Click="DeleteButton_Click" HorizontalAlignment="Right" Margin="0,230,10,0" VerticalAlignment="Top" Height="40" Width="120" Background="#C73835" Foreground="White" BorderBrush="#333333"/>
+
+        <TextBox x:Name="TextBoxWordsPreview" IsReadOnly="True" HorizontalAlignment="Center" Margin="0,280,0,0" TextWrapping="Wrap" Text="Word + Hint" VerticalAlignment="Top" Height="124" Width="350" Background="#2A2A2A" Foreground="#D0D0D0" BorderBrush="#424242" Padding="5"/>
+
+        <!-- Back Button -->
+        <Button Content="Zpět" Click="BackButton_Click" HorizontalAlignment="Center" Margin="0,425,0,0" VerticalAlignment="Top" Width="120" Height="40" Background="#555" Foreground="White" BorderBrush="#333333"/>
+
+    </Grid>
+</Window>
+
