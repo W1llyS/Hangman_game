@@ -28,10 +28,9 @@ namespace HangManV01
         {
             Menu menuWindow = new Menu();
 
-            // Zobrazí nové okno menu
+            // Shows new window Menu
             menuWindow.Show();
 
-            // Zavře aktuální okno
             this.Close();
         }
     }

@@ -24,7 +24,7 @@ namespace HangManV01
             LoadWordsIntoTextBox();
         }
 
-        private void AddButton_Click(object sender, RoutedEventArgs e)
+        private void AddButton_Click(object sender, RoutedEventArgs e) //setting for adding hint and word to excel
         {
             if (string.IsNullOrWhiteSpace(Word.Text))
             {
@@ -45,7 +45,7 @@ namespace HangManV01
                 return;
             }
 
-            string workbookPath = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "Data - Excel", "Words.xlsx");
+            string workbookPath = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "Data - Excel", "Words.xlsx"); // path for excel 
             Excel.Workbook excelWorkbook = null;
             Excel.Worksheet excelWorksheet = null;
 
@@ -64,12 +64,12 @@ namespace HangManV01
                 excelWorksheet = (Excel.Worksheet)excelWorkbook.Sheets[1];
                 int rowIndex = 1;
 
-                while (((Excel.Range)excelWorksheet.Cells[rowIndex, 1]).Value2 != null)
+                while (((Excel.Range)excelWorksheet.Cells[rowIndex, 1]).Value2 != null) 
                 {
                     rowIndex++;
                 }
 
-                excelWorksheet.Cells[rowIndex, 1] = Word.Text;
+                excelWorksheet.Cells[rowIndex, 1] = Word.Text; // excel setting for saving hint and word next to each other
                 excelWorksheet.Cells[rowIndex, 2] = Hint.Text;
 
                 excelWorkbook.Save();
@@ -125,7 +125,7 @@ namespace HangManV01
 
                     if (wordFound)
                     {
-                        Excel.Range rowRange = (Excel.Range)excelWorksheet.Rows[rowIndex];
+                        Excel.Range rowRange = (Excel.Range)excelWorksheet.Rows[rowIndex]; // setting for deleting words from database - if the word is deleted the hint is deleted too.
                         rowRange.Delete(Excel.XlDeleteShiftDirection.xlShiftUp);
                         excelWorkbook.Save();
                     }
@@ -177,7 +177,7 @@ namespace HangManV01
                     int rowIndex = 1;
                     StringBuilder sb = new StringBuilder();
 
-                    while (((Excel.Range)excelWorksheet.Cells[rowIndex, 1]).Value2 != null)
+                    while (((Excel.Range)excelWorksheet.Cells[rowIndex, 1]).Value2 != null)  // Loop through the cells in the worksheet until an empty cell is encountered.
                     {
                         string word = ((Excel.Range)excelWorksheet.Cells[rowIndex, 1]).Value2.ToString();
                         string hint = ((Excel.Range)excelWorksheet.Cells[rowIndex, 2]).Value2.ToString();
@@ -207,21 +207,21 @@ namespace HangManV01
             }
         }
 
-        private void Delete_GotFocus(object sender, RoutedEventArgs e)
+        private void Delete_GotFocus(object sender, RoutedEventArgs e) // Clear the Delete TextBox when it receives focus.
         {
             Delete.Text = string.Empty;
         }
-        private void Word_GotFocus(object sender, RoutedEventArgs e)
+        private void Word_GotFocus(object sender, RoutedEventArgs e) // Clear the Word TextBox when it receives focus.
         {
             Word.Text = string.Empty;
         }
 
-        private void Hint_GotFocus(object sender, RoutedEventArgs e)
+        private void Hint_GotFocus(object sender, RoutedEventArgs e) // Clear the Hint TextBox when it receives focus.
         {
             Hint.Text = string.Empty;
         }
 
-        private void BackButton_Click(object sender, RoutedEventArgs e)
+        private void BackButton_Click(object sender, RoutedEventArgs e) // Closes the current window and shows the owner window if it is of type Menu
         {
             this.Close();
 

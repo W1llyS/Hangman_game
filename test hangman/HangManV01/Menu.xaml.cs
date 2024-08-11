@@ -29,18 +29,14 @@ namespace HangManV01
         {
             MainWindow gameWindow = new MainWindow();
             gameWindow.Show();
-
-            // Pokud chcete zavřít aktuální okno po otevření hry, můžete přidat následující řádek:
             this.Close();
         }
 
         private void OptionsItem_Click(object sender, RoutedEventArgs e)
         {
             Options optionsWindow = new Options();
-            optionsWindow.Owner = this;  // Nastavte okno Menu jako vlastníka okna Options
+            optionsWindow.Owner = this;  // Sets the Menu window as the owner of the Options window.
             optionsWindow.Show();
-
-            // Skrývání aktuálního okna místo zavření
             this.Hide();
         }
 

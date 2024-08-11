@@ -41,17 +41,17 @@ namespace HangManV01
             Excel.Application xlApp = new Excel.Application();
             Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(excelFilePath);
             Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
-            Excel.Range xlRange = xlWorksheet.UsedRange;
+            Excel.Range xlRange = xlWorksheet.UsedRange;  
 
             int rowCount = xlRange.Rows.Count;
 
-            Random random = new Random();
+            Random random = new Random();  // selects random word from excel and the hint exactly next to the selected word
             int row = random.Next(1, rowCount + 1);
 
             currentWord = xlRange.Cells[row, 1].Value2.ToString();
             currentHint = xlRange.Cells[row, 2].Value2.ToString();
 
-            WordForGuess.Text = string.Join(" ", currentWord.Select(c => '_'));
+            WordForGuess.Text = string.Join(" ", currentWord.Select(c => '_')); // replaces letters with _
             Hint.Text = currentHint;
 
             Marshal.ReleaseComObject(xlRange);
@@ -64,17 +64,11 @@ namespace HangManV01
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            // Vytvořte novou instanci vašeho menu okna
             Menu menuWindow = new Menu();
-
-            // Zobrazí nové okno menu
             menuWindow.Show();
-
-            // Zavře aktuální okno
             this.Close();
-
         }
-        private void DisableAllLetterButtons()
+        private void DisableAllLetterButtons()       // after the game is finished disables all letters so player can't guess anymore
         {
             foreach (var child in LettersGrid.Children)
             {
@@ -85,18 +79,18 @@ namespace HangManV01
             }
         }
 
-        private void LetterButton_Click(object sender, RoutedEventArgs e)
+        private void LetterButton_Click(object sender, RoutedEventArgs e) 
         {
             Button button = sender as Button;
             string selectedLetter = button.Content.ToString();
 
-            if (currentWord.IndexOf(selectedLetter, StringComparison.OrdinalIgnoreCase) >= 0)
+            if (currentWord.IndexOf(selectedLetter, StringComparison.OrdinalIgnoreCase) >= 0) // if player guess correct letter replace _ with the letter
             {
                 RevealLetter(selectedLetter);
 
                 if (!WordForGuess.Text.Contains("_"))
                 {
-                    MessageBox.Show("Gratulujeme, vyhráli jste!", "Výhra", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("CONGRATULATION YOU WON!", "Výhra", MessageBoxButton.OK, MessageBoxImage.Information); //appears when player guesses corectly whole word
                     DisableAllLetterButtons();
                 }
             }
@@ -104,13 +98,13 @@ namespace HangManV01
             {
                 failedAttempts++;
 
-                if (failedAttempts <= 5)
+                if (failedAttempts <= 5) 
                 {
                     UpdateHangmanImage(failedAttempts);
                 }
                 if (failedAttempts == 5)
                 {
-                    MessageBox.Show("Prohráli jste! Správné slovo bylo: " + currentWord, "Prohra", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("YOU LOST! CORRECT WORD WAS: " + currentWord, "Prohra", MessageBoxButton.OK, MessageBoxImage.Warning); //appears when player spends all his attempts
                     DisableAllLetterButtons();
                 }
             }
@@ -130,7 +124,7 @@ namespace HangManV01
 
 
 
-        private void UpdateHangmanImage(int attemptNumber)
+        private void UpdateHangmanImage(int attemptNumber) // after every failed attempt show new stage immage of hangman
         {
             string imagePath = System.IO.Path.Combine(Environment.CurrentDirectory, "Images", $"hangman{attemptNumber}.bmp");
             HangmanImage.Source = new BitmapImage(new Uri(imagePath));
@@ -138,9 +132,3 @@ namespace HangManV01
     }
 }
 
-
-// private void UpdateHangmanImage(int attemptNumber)
-//{
-//   string imagePath = System.IO.Path.Combine(Environment.CurrentDirectory, "E:\\Visual Studio Projects\\HangManGame\\HangManV01\\Images", $"hangman{attemptNumber}.bmp");
-//  HangmanImage.Source = new BitmapImage(new Uri(imagePath));
-//}
