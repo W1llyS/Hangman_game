@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\l\Desktop\Git Hangman Hra\Hangman-Game\test hangman\HangManV01\obj\Debug\
+C:\Users\l\Desktop\Git Hangman Hra\Hangman-Game\test hangman\HangManV01\obj\Release\
 HangManV01
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\l\Desktop\Git Hangman Hra\Hangman-Game\test hangman\HangManV01\App.xaml
 4-1379544471
 
@@ -16,5 +16,5 @@ C:\Users\l\Desktop\Git Hangman Hra\Hangman-Game\test hangman\HangManV01\App.xaml
 141092627150
 MainWindow.xaml;Menu.xaml;Options.xaml;Rules.xaml;
 
-False
+True
 
