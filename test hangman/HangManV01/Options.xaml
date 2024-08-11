@@ -24,7 +24,7 @@
         <TextBox x:Name="TextBoxWordsPreview" IsReadOnly="True" HorizontalAlignment="Center" Margin="0,280,0,0" TextWrapping="Wrap" Text="Word + Hint" VerticalAlignment="Top" Height="124" Width="350" Background="#2A2A2A" Foreground="#D0D0D0" BorderBrush="#424242" Padding="5"/>
 
         <!-- Back Button -->
-        <Button Content="Zpět" Click="BackButton_Click" HorizontalAlignment="Center" Margin="0,425,0,0" VerticalAlignment="Top" Width="120" Height="40" Background="#555" Foreground="White" BorderBrush="#333333"/>
+        <Button Content="Back" Click="BackButton_Click" HorizontalAlignment="Center" Margin="0,425,0,0" VerticalAlignment="Top" Width="120" Height="40" Background="#555" Foreground="White" BorderBrush="#333333"/>
 
     </Grid>
 </Window>

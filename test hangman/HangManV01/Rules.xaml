@@ -36,6 +36,6 @@
                 - The difficulty level can be adjusted by the length of the word.
             </TextBlock>
         </ScrollViewer>
-        <Button  Content="Zpět" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,469,60,0" Width="100" Height="30" Background="#FF0000" Foreground="#FFFFFF" FontSize="16" Click="BackButton_Click"/>
+        <Button  Content="Back" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,469,60,0" Width="100" Height="30" Background="#FF0000" Foreground="#FFFFFF" FontSize="16" Click="BackButton_Click"/>
     </Grid>
 </Window>

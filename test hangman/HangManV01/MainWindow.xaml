@@ -103,7 +103,7 @@
             <TextBlock x:Name="Hint" Text="Nápověda" FontSize="24" Foreground="#D0D0D0"/>
         </Border>
 
-        <Button Content="Zpět" Click="BackButton_Click" HorizontalAlignment="Right" Margin="0,0,0,121" VerticalAlignment="Bottom" Width="120" Height="40" Background="#FF4F4F" Foreground="#FFFFFF" BorderBrush="#FF0000" FontSize="18"/>
+        <Button Content="Back" Click="BackButton_Click" HorizontalAlignment="Right" Margin="0,0,0,121" VerticalAlignment="Bottom" Width="120" Height="40" Background="#FF4F4F" Foreground="#FFFFFF" BorderBrush="#FF0000" FontSize="18"/>
         <Label Content="&lt;---- hint" HorizontalAlignment="Left" Margin="356,13,0,0" VerticalAlignment="Top" Width="211" Height="56" FontSize="24" FontWeight="Bold" Foreground="#FFCACACA"/>
         <Label Content="&lt;---- guess" HorizontalAlignment="Left" Margin="356,105,0,0" VerticalAlignment="Top" Width="211" Height="56" FontSize="24" FontWeight="Bold" Foreground="#FFCACACA"/>
     </Grid>
