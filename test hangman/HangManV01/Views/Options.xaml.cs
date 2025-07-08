@@ -4,11 +4,9 @@ using System.Windows.Controls;
 using System.Text;
 using HangManV01.Services;
 
+
 namespace HangManV01.Views
 {
-    /// <summary>
-    /// Interaction logic for Options.xaml
-    /// </summary>
     public partial class Options : Window
     {
         private readonly IExcelService _excelService;

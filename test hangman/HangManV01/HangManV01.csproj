@@ -65,6 +65,7 @@
     </Compile>
     <Compile Include="Commands\NavigationHelper.cs" />
     <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Interfaces\IExcelService.cs" />
     <Compile Include="Models\WordModel.cs" />
     <Compile Include="Views\BaseWindow.cs" />
     <Compile Include="Views\Rules.xaml.cs">

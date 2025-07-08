@@ -2,9 +2,6 @@
 
 namespace HangManV01.Views
 {
-    /// <summary>
-    /// Interaction logic for Rules.xaml
-    /// </summary>
     public partial class Rules : Window
     {
         public Rules()
