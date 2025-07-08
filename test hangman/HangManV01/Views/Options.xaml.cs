@@ -216,14 +216,7 @@ namespace HangManV01.Views
             Hint.Text = string.Empty;
         }
 
-        private void BackButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-
-            if (this.Owner != null && this.Owner is Menu)
-            {
-                this.Owner.Show();
-            }
-        }
+        private void BackButton_Click(object sender, RoutedEventArgs e) =>
+        NavigationHelper.BackToMain(this);
     }
 }

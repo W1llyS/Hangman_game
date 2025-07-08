@@ -11,12 +11,9 @@ namespace HangManV01.Views
         {
             InitializeComponent();
         }
+        private void BackButton_Click(object sender, RoutedEventArgs e) =>
+        NavigationHelper.BackToMain(this);
 
-        private void BackButton_Click(object sender, RoutedEventArgs e)
-        {
-            var menuWindow = new MainMenu();
-            menuWindow.Show();
-            this.Close();
-        }
+
     }
 }

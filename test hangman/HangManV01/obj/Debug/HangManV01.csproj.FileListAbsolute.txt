@@ -143,3 +143,4 @@ C:\Users\l\Desktop\Hangman-Game\test hangman\HangManV01\obj\Debug\HangManV01.csp
 C:\Users\l\Desktop\Hangman-Game\test hangman\HangManV01\obj\Debug\HangManV01.exe
 C:\Users\l\Desktop\Hangman-Game\test hangman\HangManV01\obj\Debug\HangManV01.pdb
 C:\Users\l\Desktop\Hangman-Game\test hangman\HangManV01\obj\Debug\HangManV01.exe.config
+C:\Users\l\Desktop\Hangman-Game\test hangman\HangManV01\obj\Debug\App.baml

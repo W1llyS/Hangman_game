@@ -2,9 +2,6 @@
 
 namespace HangManV01.Views
 {
-    /// <summary>
-    /// Interaction logic for Menu.xaml
-    /// </summary>
     public partial class MainMenu : Window
     {
         public MainMenu()
@@ -14,24 +11,27 @@ namespace HangManV01.Views
 
         private void PlayMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow gameWindow = new MainWindow();
-            gameWindow.Show();
+            var w = new MainWindow();
+            App.Current.MainWindow = w;
+            w.Show();
             this.Close();
         }
 
         private void OptionsItem_Click(object sender, RoutedEventArgs e)
         {
-            Options optionsWindow = new Options();
-            optionsWindow.Owner = this;
-            optionsWindow.Show();
-            this.Hide();
+            
+            var w = new Options();
+            App.Current.MainWindow = w;
+            w.Show();
+            this.Close();
         }
 
-        private void RulesItem_Click(object sender, RoutedEventArgs e)
+        private void RulesItem_Click(object s, RoutedEventArgs e)
         {
-            Rules rulesWindow = new Rules();
-            rulesWindow.Show();
-            this.Close();
+            var w = new Rules();
+            Application.Current.MainWindow = w;   // hand off “main window” role
+            w.Show();
+            this.Close();                         
         }
     }
 }

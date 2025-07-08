@@ -142,9 +142,11 @@
         <!-- ─────────────  BACK BUTTON  ───────────── -->
         <Button Content="Back"
                 Grid.Row="0" Grid.Column="1"
-                Command="{Binding BackCommand}"
+                Click="BackButton_Click"
                 Width="120" Height="40"
                 HorizontalAlignment="Right"
                 Background="#FF4F4F" Foreground="#FFFFFF" BorderBrush="#FF0000"/>
     </Grid>
 </Window>
+
+    
