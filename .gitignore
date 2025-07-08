@@ -27,3 +27,4 @@ packages/
 # ---- OS files ----
 *.DS_Store
 Thumbs.db
+/test hangman/.vs/HangManV01/v17/.suo

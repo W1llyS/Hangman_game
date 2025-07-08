@@ -9,6 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using HangManV01.Views;
+using System.Collections.ObjectModel;
 
 namespace HangManV01.ViewModels
 {
@@ -20,10 +21,12 @@ namespace HangManV01.ViewModels
         private string _hint;
         private BitmapImage _hangmanImage;
         private bool _isGameOver;
+        private ObservableCollection<char> _guessedLetters;
 
         public MainWindowViewModel()
         {
             _excelService = new ExcelService();
+            _guessedLetters = new ObservableCollection<char>();
 
             // Initialize commands
             LetterGuessCommand = new RelayCommand(GuessLetter, CanGuessLetter);
@@ -57,6 +60,12 @@ namespace HangManV01.ViewModels
             set => SetProperty(ref _isGameOver, value);
         }
 
+        public ObservableCollection<char> GuessedLetters
+        {
+            get => _guessedLetters;
+            set => SetProperty(ref _guessedLetters, value);
+        }
+
         public ICommand LetterGuessCommand { get; }
         public ICommand BackCommand { get; }
 
@@ -67,11 +76,16 @@ namespace HangManV01.ViewModels
             Hint = _currentGame.Hint;
             IsGameOver = false;
             HangmanImage = null;
+            GuessedLetters.Clear(); // Clear guessed letters for new game
         }
 
         private bool CanGuessLetter(object parameter)
         {
-            return !IsGameOver && parameter is string letter && !string.IsNullOrEmpty(letter);
+            if (IsGameOver || !(parameter is string letter) || string.IsNullOrEmpty(letter))
+                return false;
+
+            char letterChar = letter.ToUpper()[0];
+            return !_currentGame.GuessedLetters.Contains(letterChar);
         }
 
         private void GuessLetter(object parameter)
@@ -86,6 +100,7 @@ namespace HangManV01.ViewModels
                 return;
 
             _currentGame.GuessedLetters.Add(letter);
+            GuessedLetters.Add(letter); // Add to observable collection for UI binding
 
             if (_currentGame.Word.ToUpper().Contains(letter))
             {
@@ -156,7 +171,12 @@ namespace HangManV01.ViewModels
         {
             var menuWindow = new MainMenu();
             menuWindow.Show();
+        }
 
+        // Method to check if a specific letter has been guessed (for XAML binding)
+        public bool IsLetterGuessed(char letter)
+        {
+            return _currentGame?.GuessedLetters.Contains(char.ToUpper(letter)) ?? false;
         }
     }
 }
