@@ -1,1 +1,29 @@
+# ---- Build output ----
+bin/
+obj/
+*.exe
+*.dll
+*.pdb
+*.cache
+*.log
+
+# ---- Visual Studio / VS Code ----
 .vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# ---- Rider / ReSharper ----
+.idea/
+_ReSharper*/
+*.DotSettings.user
+
+# ---- NuGet packages ----
+*.nupkg
+*.snupkg
+packages/
+
+# ---- OS files ----
+*.DS_Store
+Thumbs.db
