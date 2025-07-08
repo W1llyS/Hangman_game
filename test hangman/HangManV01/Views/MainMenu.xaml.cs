@@ -1,29 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
-namespace HangManV01
+namespace HangManV01.Views
 {
     /// <summary>
     /// Interaction logic for Menu.xaml
     /// </summary>
-    public partial class Menu : Window
+    public partial class MainMenu : Window
     {
-        public Menu()
+        public MainMenu()
         {
             InitializeComponent();
         }
-
 
         private void PlayMenuItem_Click(object sender, RoutedEventArgs e)
         {
@@ -35,7 +22,7 @@ namespace HangManV01
         private void OptionsItem_Click(object sender, RoutedEventArgs e)
         {
             Options optionsWindow = new Options();
-            optionsWindow.Owner = this;  // Sets the Menu window as the owner of the Options window.
+            optionsWindow.Owner = this;
             optionsWindow.Show();
             this.Hide();
         }
@@ -46,5 +33,5 @@ namespace HangManV01
             rulesWindow.Show();
             this.Close();
         }
-    } 
+    }
 }

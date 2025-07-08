@@ -1,0 +1,150 @@
+﻿<Window x:Class="HangManV01.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:HangManV01.ViewModels"
+        Title="Game"
+        Width="800" Height="550"
+        ResizeMode="NoResize"
+        Background="#1E1E1E"
+        Icon="/Assets/Images/icon.ico"
+        MaxWidth="800" MaxHeight="550">
+
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+
+    <!-- 10 px padding all round -->
+    <Grid Margin="10">
+
+        <!-- two columns: 0 = left panel (fixed 360 px), 1 = right panel -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="360"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- three rows: hint, word, everything else -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- ─────────────  HINT  ───────────── -->
+        <Border Grid.Row="0" Grid.Column="0"
+                Background="#2A2A2A" Padding="5" Height="59">
+            <TextBlock Text="{Binding Hint}"
+                       FontSize="24" Foreground="#D0D0D0"/>
+        </Border>
+
+        <Label Grid.Row="0" Grid.Column="1"
+               Content="&lt;---- Hint"
+               VerticalAlignment="Center"
+               FontSize="24" FontWeight="Bold"
+               Foreground="#FFCACACA"/>
+
+        <!-- ─────────────  WORD  ───────────── -->
+        <Border Grid.Row="1" Grid.Column="0"
+                Background="#2A2A2A" Padding="5" Height="59" Margin="0,10,0,0">
+            <TextBlock Text="{Binding DisplayWord}"
+                       FontSize="24" Foreground="#D0D0D0"/>
+        </Border>
+
+        <Label Grid.Row="1" Grid.Column="1"
+               Content="&lt;---- Guess"
+               VerticalAlignment="Center" Margin="0,10,0,0"
+               FontSize="24" FontWeight="Bold"
+               Foreground="#FFCACACA"/>
+
+        <!-- ─────────── LETTER BUTTONS ─────────── -->
+        <Grid x:Name="LettersGrid"
+              Grid.Row="2" Grid.Column="0" Margin="0,10,0,0">
+
+            <!-- shared button style -->
+            <Grid.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Width" Value="50"/>
+                    <Setter Property="Height" Value="50"/>
+                    <Setter Property="Margin" Value="5"/>
+                    <Setter Property="FontSize" Value="20"/>
+                    <Setter Property="Background" Value="#2A2A2A"/>
+                    <Setter Property="Foreground" Value="#D0D0D0"/>
+                    <Setter Property="BorderBrush" Value="#424242"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="#555555"/>
+                            <Setter Property="Foreground" Value="#888888"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Grid.Resources>
+
+            <!-- 6 columns × 5 rows -->
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <!-- buttons (exactly like before, just confined to this 360 px area) -->
+            <Button Content="A" Grid.Row="0" Grid.Column="0" Command="{Binding LetterGuessCommand}" CommandParameter="A"/>
+            <Button Content="B" Grid.Row="0" Grid.Column="1" Command="{Binding LetterGuessCommand}" CommandParameter="B"/>
+            <Button Content="C" Grid.Row="0" Grid.Column="2" Command="{Binding LetterGuessCommand}" CommandParameter="C"/>
+            <Button Content="D" Grid.Row="0" Grid.Column="3" Command="{Binding LetterGuessCommand}" CommandParameter="D"/>
+            <Button Content="E" Grid.Row="0" Grid.Column="4" Command="{Binding LetterGuessCommand}" CommandParameter="E"/>
+            <Button Content="F" Grid.Row="0" Grid.Column="5" Command="{Binding LetterGuessCommand}" CommandParameter="F"/>
+
+            <Button Content="G" Grid.Row="1" Grid.Column="0" Command="{Binding LetterGuessCommand}" CommandParameter="G"/>
+            <Button Content="H" Grid.Row="1" Grid.Column="1" Command="{Binding LetterGuessCommand}" CommandParameter="H"/>
+            <Button Content="I" Grid.Row="1" Grid.Column="2" Command="{Binding LetterGuessCommand}" CommandParameter="I"/>
+            <Button Content="J" Grid.Row="1" Grid.Column="3" Command="{Binding LetterGuessCommand}" CommandParameter="J"/>
+            <Button Content="K" Grid.Row="1" Grid.Column="4" Command="{Binding LetterGuessCommand}" CommandParameter="K"/>
+            <Button Content="L" Grid.Row="1" Grid.Column="5" Command="{Binding LetterGuessCommand}" CommandParameter="L"/>
+
+            <Button Content="M" Grid.Row="2" Grid.Column="0" Command="{Binding LetterGuessCommand}" CommandParameter="M"/>
+            <Button Content="N" Grid.Row="2" Grid.Column="1" Command="{Binding LetterGuessCommand}" CommandParameter="N"/>
+            <Button Content="O" Grid.Row="2" Grid.Column="2" Command="{Binding LetterGuessCommand}" CommandParameter="O"/>
+            <Button Content="P" Grid.Row="2" Grid.Column="3" Command="{Binding LetterGuessCommand}" CommandParameter="P"/>
+            <Button Content="Q" Grid.Row="2" Grid.Column="4" Command="{Binding LetterGuessCommand}" CommandParameter="Q"/>
+            <Button Content="R" Grid.Row="2" Grid.Column="5" Command="{Binding LetterGuessCommand}" CommandParameter="R"/>
+
+            <Button Content="S" Grid.Row="3" Grid.Column="0" Command="{Binding LetterGuessCommand}" CommandParameter="S"/>
+            <Button Content="T" Grid.Row="3" Grid.Column="1" Command="{Binding LetterGuessCommand}" CommandParameter="T"/>
+            <Button Content="U" Grid.Row="3" Grid.Column="2" Command="{Binding LetterGuessCommand}" CommandParameter="U"/>
+            <Button Content="V" Grid.Row="3" Grid.Column="3" Command="{Binding LetterGuessCommand}" CommandParameter="V"/>
+            <Button Content="W" Grid.Row="3" Grid.Column="4" Command="{Binding LetterGuessCommand}" CommandParameter="W"/>
+            <Button Content="X" Grid.Row="3" Grid.Column="5" Command="{Binding LetterGuessCommand}" CommandParameter="X"/>
+
+            <Button Content="Y" Grid.Row="4" Grid.Column="0" Command="{Binding LetterGuessCommand}" CommandParameter="Y"/>
+            <Button Content="Z" Grid.Row="4" Grid.Column="1" Command="{Binding LetterGuessCommand}" CommandParameter="Z"/>
+            <Button Content="," Grid.Row="4" Grid.Column="2" Command="{Binding LetterGuessCommand}" CommandParameter=","/>
+            <Button Content="." Grid.Row="4" Grid.Column="3" Command="{Binding LetterGuessCommand}" CommandParameter="."/>
+            <Button Content="?" Grid.Row="4" Grid.Column="4" Command="{Binding LetterGuessCommand}" CommandParameter="?"/>
+            <Button Content="!" Grid.Row="4" Grid.Column="5" Command="{Binding LetterGuessCommand}" CommandParameter="!"/>
+        </Grid>
+
+        <!-- ─────────────  HANGMAN IMAGE  ───────────── -->
+        <Image Grid.Row="2" Grid.Column="1"
+               Source="{Binding HangmanImage}"
+               Stretch="Uniform"
+               HorizontalAlignment="Left"
+               Margin="10"/>
+
+        <!-- ─────────────  BACK BUTTON  ───────────── -->
+        <Button Content="Back"
+                Grid.Row="0" Grid.Column="1"
+                Command="{Binding BackCommand}"
+                Width="120" Height="40"
+                HorizontalAlignment="Right"
+                Background="#FF4F4F" Foreground="#FFFFFF" BorderBrush="#FF0000"/>
+    </Grid>
+</Window>

@@ -1,17 +1,11 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using Excel = Microsoft.Office.Interop.Excel;  // Přidáváme alias pro Excel
+using Excel = Microsoft.Office.Interop.Excel;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Text;
 
-namespace HangManV01
+namespace HangManV01.Views
 {
     /// <summary>
     /// Interaction logic for Options.xaml
@@ -24,28 +18,28 @@ namespace HangManV01
             LoadWordsIntoTextBox();
         }
 
-        private void AddButton_Click(object sender, RoutedEventArgs e) //setting for adding hint and word to excel
+        private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(Word.Text))
             {
-                MessageBox.Show("Prosím, zadejte slovo do pole 'Word'.");
+                MessageBox.Show("Please enter a word in the 'Word' field.");
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(Hint.Text))
             {
-                MessageBox.Show("Prosím, zadejte nápovědu do pole 'Hint'.");
+                MessageBox.Show("Please enter a hint in the 'Hint' field.");
                 return;
             }
 
             Excel.Application excelApp = new Excel.Application();
             if (excelApp == null)
             {
-                MessageBox.Show("Excel není správně nainstalován!");
+                MessageBox.Show("Excel is not installed correctly!");
                 return;
             }
 
-            string workbookPath = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "Data - Excel", "Words.xlsx"); // path for excel 
+            string workbookPath = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "Data - Excel", "Words.xlsx");
             Excel.Workbook excelWorkbook = null;
             Excel.Worksheet excelWorksheet = null;
 
@@ -64,12 +58,12 @@ namespace HangManV01
                 excelWorksheet = (Excel.Worksheet)excelWorkbook.Sheets[1];
                 int rowIndex = 1;
 
-                while (((Excel.Range)excelWorksheet.Cells[rowIndex, 1]).Value2 != null) 
+                while (((Excel.Range)excelWorksheet.Cells[rowIndex, 1]).Value2 != null)
                 {
                     rowIndex++;
                 }
 
-                excelWorksheet.Cells[rowIndex, 1] = Word.Text; // excel setting for saving hint and word next to each other
+                excelWorksheet.Cells[rowIndex, 1] = Word.Text;
                 excelWorksheet.Cells[rowIndex, 2] = Hint.Text;
 
                 excelWorkbook.Save();
@@ -78,7 +72,7 @@ namespace HangManV01
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Došlo k chybě: " + ex.Message);
+                MessageBox.Show("An error occurred: " + ex.Message);
             }
             finally
             {
@@ -95,7 +89,7 @@ namespace HangManV01
             Excel.Application excelApp = new Excel.Application();
             if (excelApp == null)
             {
-                MessageBox.Show("Excel není správně nainstalován!");
+                MessageBox.Show("Excel is not installed correctly!");
                 return;
             }
 
@@ -125,23 +119,23 @@ namespace HangManV01
 
                     if (wordFound)
                     {
-                        Excel.Range rowRange = (Excel.Range)excelWorksheet.Rows[rowIndex]; // setting for deleting words from database - if the word is deleted the hint is deleted too.
+                        Excel.Range rowRange = (Excel.Range)excelWorksheet.Rows[rowIndex];
                         rowRange.Delete(Excel.XlDeleteShiftDirection.xlShiftUp);
                         excelWorkbook.Save();
                     }
                     else
                     {
-                        MessageBox.Show("Slovo nebylo nalezeno v Excelu.");
+                        MessageBox.Show("Word not found in Excel.");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Excel soubor neexistuje!");
+                    MessageBox.Show("Excel file does not exist!");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Došlo k chybě: " + ex.Message);
+                MessageBox.Show("An error occurred: " + ex.Message);
             }
             finally
             {
@@ -159,7 +153,7 @@ namespace HangManV01
             Excel.Application excelApp = new Excel.Application();
             if (excelApp == null)
             {
-                MessageBox.Show("Excel není správně nainstalován!");
+                MessageBox.Show("Excel is not installed correctly!");
                 return;
             }
 
@@ -177,7 +171,7 @@ namespace HangManV01
                     int rowIndex = 1;
                     StringBuilder sb = new StringBuilder();
 
-                    while (((Excel.Range)excelWorksheet.Cells[rowIndex, 1]).Value2 != null)  // Loop through the cells in the worksheet until an empty cell is encountered.
+                    while (((Excel.Range)excelWorksheet.Cells[rowIndex, 1]).Value2 != null)
                     {
                         string word = ((Excel.Range)excelWorksheet.Cells[rowIndex, 1]).Value2.ToString();
                         string hint = ((Excel.Range)excelWorksheet.Cells[rowIndex, 2]).Value2.ToString();
@@ -190,12 +184,12 @@ namespace HangManV01
                 }
                 else
                 {
-                    MessageBox.Show("Excel soubor neexistuje!");
+                    MessageBox.Show("Excel file does not exist!");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Došlo k chybě: " + ex.Message);
+                MessageBox.Show("An error occurred: " + ex.Message);
             }
             finally
             {
@@ -207,21 +201,22 @@ namespace HangManV01
             }
         }
 
-        private void Delete_GotFocus(object sender, RoutedEventArgs e) // Clear the Delete TextBox when it receives focus.
+        private void Delete_GotFocus(object sender, RoutedEventArgs e)
         {
             Delete.Text = string.Empty;
         }
-        private void Word_GotFocus(object sender, RoutedEventArgs e) // Clear the Word TextBox when it receives focus.
+
+        private void Word_GotFocus(object sender, RoutedEventArgs e)
         {
             Word.Text = string.Empty;
         }
 
-        private void Hint_GotFocus(object sender, RoutedEventArgs e) // Clear the Hint TextBox when it receives focus.
+        private void Hint_GotFocus(object sender, RoutedEventArgs e)
         {
             Hint.Text = string.Empty;
         }
 
-        private void BackButton_Click(object sender, RoutedEventArgs e) // Closes the current window and shows the owner window if it is of type Menu
+        private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
 

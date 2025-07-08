@@ -120,3 +120,26 @@ C:\Users\l\Desktop\Git Hangman Hra\Hangman-Game\test hangman\HangManV01\obj\Debu
 C:\Users\l\Desktop\Git Hangman Hra\Hangman-Game\test hangman\HangManV01\obj\Debug\HangManV01.csproj.CoreCompileInputs.cache
 C:\Users\l\Desktop\Git Hangman Hra\Hangman-Game\test hangman\HangManV01\obj\Debug\HangManV01.exe
 C:\Users\l\Desktop\Git Hangman Hra\Hangman-Game\test hangman\HangManV01\obj\Debug\HangManV01.pdb
+C:\Users\l\Desktop\Hangman-Game\test hangman\HangManV01\bin\Debug\HangManV01.exe.config
+C:\Users\l\Desktop\Hangman-Game\test hangman\HangManV01\bin\Debug\HangManV01.exe
+C:\Users\l\Desktop\Hangman-Game\test hangman\HangManV01\bin\Debug\HangManV01.pdb
+C:\Users\l\Desktop\Hangman-Game\test hangman\HangManV01\obj\Debug\HangManV01.csproj.AssemblyReference.cache
+C:\Users\l\Desktop\Hangman-Game\test hangman\HangManV01\obj\Debug\Views\MainWindow.g.cs
+C:\Users\l\Desktop\Hangman-Game\test hangman\HangManV01\obj\Debug\Views\MainMenu.g.cs
+C:\Users\l\Desktop\Hangman-Game\test hangman\HangManV01\obj\Debug\Views\Options.g.cs
+C:\Users\l\Desktop\Hangman-Game\test hangman\HangManV01\obj\Debug\Views\Rules.g.cs
+C:\Users\l\Desktop\Hangman-Game\test hangman\HangManV01\obj\Debug\App.g.cs
+C:\Users\l\Desktop\Hangman-Game\test hangman\HangManV01\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\l\Desktop\Hangman-Game\test hangman\HangManV01\obj\Debug\HangManV01_MarkupCompile.cache
+C:\Users\l\Desktop\Hangman-Game\test hangman\HangManV01\obj\Debug\HangManV01_MarkupCompile.lref
+C:\Users\l\Desktop\Hangman-Game\test hangman\HangManV01\obj\Debug\Views\MainWindow.baml
+C:\Users\l\Desktop\Hangman-Game\test hangman\HangManV01\obj\Debug\Views\MainMenu.baml
+C:\Users\l\Desktop\Hangman-Game\test hangman\HangManV01\obj\Debug\Views\Options.baml
+C:\Users\l\Desktop\Hangman-Game\test hangman\HangManV01\obj\Debug\Views\Rules.baml
+C:\Users\l\Desktop\Hangman-Game\test hangman\HangManV01\obj\Debug\HangManV01.g.resources
+C:\Users\l\Desktop\Hangman-Game\test hangman\HangManV01\obj\Debug\HangManV01.Properties.Resources.resources
+C:\Users\l\Desktop\Hangman-Game\test hangman\HangManV01\obj\Debug\HangManV01.csproj.GenerateResource.cache
+C:\Users\l\Desktop\Hangman-Game\test hangman\HangManV01\obj\Debug\HangManV01.csproj.CoreCompileInputs.cache
+C:\Users\l\Desktop\Hangman-Game\test hangman\HangManV01\obj\Debug\HangManV01.exe
+C:\Users\l\Desktop\Hangman-Game\test hangman\HangManV01\obj\Debug\HangManV01.pdb
+C:\Users\l\Desktop\Hangman-Game\test hangman\HangManV01\obj\Debug\HangManV01.exe.config

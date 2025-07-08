@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\kolko\Desktop\test hangman\HangManV01\obj\Debug\
+C:\Users\l\Desktop\Hangman-Game\test hangman\HangManV01\obj\Debug\
 HangManV01
 none
 false
 DEBUG;TRACE
-C:\Users\kolko\Desktop\test hangman\HangManV01\App.xaml
-4-1379544471
+C:\Users\l\Desktop\Hangman-Game\test hangman\HangManV01\App.xaml
+4527023536
 
-9-1043053297
-141900753624
-MainWindow.xaml;Menu.xaml;Options.xaml;Rules.xaml;
+15-1071007710
+14-1679727879
+Views\MainWindow.xaml;Views\MainMenu.xaml;Views\Options.xaml;Views\Rules.xaml;
 
-False
+True
 
