@@ -26,18 +26,14 @@
 ## Interface Preview
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/fb1be61b-438f-426c-96f9-38eb13503482" alt="Options Screen" width="500" />
-</p>
-<p align="center">  
-  <img src="https://github.com/user-attachments/assets/bb1c4bd7-18ef-4a18-b165-756ea5d0abeb" alt="Game Start" width="700" />
+  <img src="Images/HangmanMenu.png" alt="Game Menu" width="500" />
 </p>
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/1852e148-385e-400a-b620-64c73665aa5d" alt="Gameplay" width="500" />
+  <img src="Images/HangmanGame.png" alt="Gameplay" width="700" />
 </p>
-
-
-
-
+<p align="center">
+  <img src="Images/HangmanOptions.png" alt="Options" width="500" />
+</p>
 
 ---
 
