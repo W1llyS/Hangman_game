@@ -136,8 +136,11 @@
         <Image Grid.Row="2" Grid.Column="1"
                Source="{Binding HangmanImage}"
                Stretch="Uniform"
-               HorizontalAlignment="Left"
+               HorizontalAlignment="Center"
                Margin="10"/>
+
+
+
 
         <!-- ─────────────  BACK BUTTON  ───────────── -->
         <Button Content="Back"

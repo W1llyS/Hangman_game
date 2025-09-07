@@ -17,7 +17,7 @@ namespace HangManV01.Models
         {
             GuessedLetters = new List<char>(); // start empty
             FailedAttempts = 0;                // nothing guessed wrong yet
-            MaxAttempts = 5;                   // default max attempts
+            MaxAttempts = 5;                   // default max attempts -- can be adjusted later
             IsGameWon = false;
             IsGameLost = false;
         }
